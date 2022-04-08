@@ -17,6 +17,7 @@ class RecyclerViewAdapter: RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder
         fun bind(myModel:MyModel){
             binding.rebtn.text = myModel.rebtn
             binding.rebtn.setOnClickListener {
+                myModel.rereed.plus(1)
                 var intent1 = Intent(binding.root.context,post::class.java)
                 intent1.putExtra("PostID", myModel.postID)
                 intent1.putExtra("Rebtn", myModel.rebtn)

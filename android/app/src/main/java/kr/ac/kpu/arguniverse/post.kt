@@ -67,7 +67,7 @@ class post : AppCompatActivity() {
             if (edit.getText().toString().equals("")) {
                 Toast.makeText(applicationContext, "자신의 의견을 먼저 써주세요", Toast.LENGTH_SHORT).show()
             } else
-                if (edit.getText().toString().equals("")) {
+                 {
                     badnum = badnum?.plus(1)
                     Edit = edit.toString()
                     var intent = Intent(applicationContext, comment::class.java)

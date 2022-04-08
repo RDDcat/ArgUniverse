@@ -43,11 +43,10 @@ class MainActivity : AppCompatActivity() {
                 "후자는 너무 배고팠으면 그럴 수 있지 받은 것만으로도 기분 좋다\n" +
                 "\n" +
                 "이거 의외로 갈림")
-        btn.setText(popular.rebtn)
-        heart.setText(popular.reheart.toString())
-        reed.setText(popular.rereed.toString())
+
 
         btn.setOnClickListener{
+            popular.rereed.plus(1)
             var intent = Intent(applicationContext,post::class.java)
             intent.putExtra("PostID", popular.postID )
             intent.putExtra("Reheart", popular.reheart )
@@ -56,6 +55,10 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("Content",popular.content)
             startActivity(intent)
         }
+
+        btn.setText(popular.rebtn)
+        heart.setText(popular.reheart.toString())
+        reed.setText(popular.rereed.toString())
 
         initializelist()
         initRecyclerView()

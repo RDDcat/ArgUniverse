@@ -12,6 +12,36 @@
             android:layout_height="80dp">
 
             <TextView
+            android:id="@+id/Cheartcount"
+            android:text="0"
+            android:gravity="center"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginRight="99dp"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/fire1" />
+            <TextView
+                android:id="@+id/Cgoodcount"
+                android:text="0"
+                android:gravity="center"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:layout_marginRight="49dp"
+                android:background="@color/white"
+                android:drawableLeft="@drawable/good1" />
+
+            <TextView
+                android:id="@+id/Cbadcount"
+                android:text="0"
+                android:layout_width="50dp"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="@color/white"
+                android:drawableLeft="@drawable/bad1"/>
+            <TextView
                 android:id="@+id/cname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -38,7 +68,7 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:id="@+id/Cgoodcount"
+            android:id="@+id/editgoodcount"
             android:text="0"
             android:layout_width="50dp"
             android:layout_height="match_parent"
@@ -48,7 +78,7 @@
             android:drawableLeft="@drawable/good1" />
 
         <Button
-            android:id="@+id/Cbadcount"
+            android:id="@+id/editbadcount"
             android:text="0"
             android:layout_width="50dp"
             android:layout_height="match_parent"
@@ -61,6 +91,7 @@
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:text="소신발언"
+            android:textColor="@color/black"
 
             />
 
