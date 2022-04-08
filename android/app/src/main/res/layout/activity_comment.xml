@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".comment">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="80dp">
 
             <TextView
+                android:id="@+id/cname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
@@ -26,32 +23,47 @@
                 />
 
             <Button
+                android:id="@+id/finish2"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:text="<"
+                android:text="&lt;"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
 
-            <Switch
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="right"
-                android:text="공감순" />
-
-            <Switch
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="right|center"
-                android:text="찬성" />
-
-            <Switch
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="right|bottom"
-                android:text="반대" />
-
         </FrameLayout>
 
-    </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content">
 
-</ScrollView>
+        <Button
+            android:id="@+id/Cgoodcount"
+            android:text="0"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginRight="49dp"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/good1" />
+
+        <Button
+            android:id="@+id/Cbadcount"
+            android:text="0"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/bad1"/>
+        <TextView
+            android:id="@+id/Cedit"
+            android:layout_width="260dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:text="소신발언"
+
+            />
+
+    </FrameLayout>
+
+</LinearLayout>

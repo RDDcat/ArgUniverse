@@ -3,5 +3,7 @@ package kr.ac.kpu.arguniverse
 data class MyModel(
     val rebtn :String,
     val reheart : Int,
-    val rereed : Int
+    val rereed : Int,
+    val postID : Int,
+    val content : String
 )

@@ -39,24 +39,32 @@
             android:text="0"
             android:textColor="@color/black"
             android:drawableLeft="@drawable/fire1"
-            android:layout_marginRight="60dp"
-            android:layout_gravity="right|center"/>
+            android:layout_marginRight="80dp"
+            android:layout_marginTop="60dp"
+            android:layout_gravity="right|bottom"/>
         <TextView
             android:id="@+id/reed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="조회수:"
+            android:text=""
             android:textColor="@color/black"
             android:layout_marginRight="10dp"
+            android:layout_gravity="right|bottom"/>
+        <TextView
+            android:id="@+id/entry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="조회수:"
+            android:textColor="@color/black"
+            android:layout_marginRight="35dp"
             android:layout_gravity="right|bottom"/>
         <Button
             android:id="@+id/btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:background=""
             android:paddingLeft="10dp"
-            android:text="케이크 논쟁"
+            android:text="제목"
             android:textColor="@color/black"
             android:textAlignment="textStart" />
 

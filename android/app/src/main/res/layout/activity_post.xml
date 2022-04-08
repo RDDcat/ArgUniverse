@@ -14,48 +14,39 @@
         android:layout_width="match_parent"
         android:layout_height="80dp">
         <TextView
+            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
-            android:text="케이크 논쟁"
+            android:text="제목"
             android:textColor="@color/black"
 
              />
         <Button
+            android:id="@+id/finish1"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:text=""
-            android:textSize="20dp"
+            android:text="&lt;"
             android:textColor="@color/black"
-            />
+            android:background="@color/white"
+            android:textSize="20dp" />
 
 
     </FrameLayout>
     <TextView
+        android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="30dp"
         android:textColor="@color/black"
-        android:text="
-친구가 너 생일이라 케이크를 삼
-
-근데 친구가 케이크 사놓고 너 기다리고 있는데
-배도 고프고 딱히 밥 먹을 곳도 없고 해서
-케이크 5분의 1조각 정도 칼로 썰어서 덜어먹음
-
-너가 딱 케이크 받았을 땐 케이크가 잘려있길래 물어보니까
-“내가 너 기다리다가 너무 배고파서 먹었어… 미안해….ㅜㅜㅜㅜ”
-라고 하면 너네 기분 어떰?
-
-전자는 아니 아무리 그래도 나 줄 거라면서 그걸 먹냐
-후자는 너무 배고팠으면 그럴 수 있지 받은 것만으로도 기분 좋다
-
-이거 의외로 갈림"/>
+        android:text=""/>
     <Button
+        android:id="@+id/heartcount"
         android:layout_width="50dp"
         android:layout_height="match_parent"
         android:layout_gravity="right"
+        android:background="@color/white"
         android:drawableLeft="@drawable/fire1"/>
 
 
@@ -70,21 +61,26 @@
         android:layout_height="wrap_content">
 
         <Button
+            android:id="@+id/goodcount"
             android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_gravity="right"
-            android:layout_marginRight="71dp"
-            android:drawableLeft="@drawable/good1"/>
+            android:layout_marginRight="49dp"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/good1" />
+
         <Button
+            android:id="@+id/badcount"
             android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_gravity="right"
+            android:background="@color/white"
             android:drawableLeft="@drawable/bad1"/>
         <EditText
+            android:id="@+id/edit"
             android:layout_width="260dp"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
-            android:background=""
             android:hint="소신발언"
 
             />
