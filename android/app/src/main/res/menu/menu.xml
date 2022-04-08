@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="찬성만 보기"/>
+    <item
+        android:title="반대만 보기"/>
+    <item
+        android:title="조회순"/>
+    <item
+        android:title="좋아요순"/>
+</menu>
