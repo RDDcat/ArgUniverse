@@ -52,7 +52,7 @@ class post : AppCompatActivity() {
                 Toast.makeText(applicationContext, "자신의 의견을 먼저 써주세요", Toast.LENGTH_SHORT).show()
             } else {
                 goodnum = goodnum?.plus(1)
-                Edit = edit.toString()
+                Edit = edit.text.toString()
                 var intent = Intent(applicationContext, comment::class.java)
                 intent.putExtra("cBtn", Btn)
                 intent.putExtra("cgoodnum", goodnum)
