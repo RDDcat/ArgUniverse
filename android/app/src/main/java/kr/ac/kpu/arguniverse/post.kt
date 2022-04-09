@@ -82,7 +82,7 @@ class post : AppCompatActivity() {
         }
 
         heartcount.setOnClickListener {
-            Heart =Heart?.plus(1)
+            Heart = Heart?.plus(1)!!
         }
     }
 }
