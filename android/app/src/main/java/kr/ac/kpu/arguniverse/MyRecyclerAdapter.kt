@@ -3,7 +3,6 @@ package kr.ac.kpu.arguniverse
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import kr.ac.kpu.arguniverse.databinding.RecyclerViewItemBinding
 
@@ -15,19 +14,19 @@ class RecyclerViewAdapter: RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder
     inner class MyViewHolder(private val binding: RecyclerViewItemBinding): RecyclerView.ViewHolder(binding.root) {
 
         fun bind(myModel:MyModel){
-            binding.rebtn.text = myModel.rebtn
+            binding.rebtn.text = myModel.title
             binding.rebtn.setOnClickListener {
-                myModel.rereed.plus(1)
+                myModel.viewCount.plus(1)
                 var intent1 = Intent(binding.root.context,post::class.java)
                 intent1.putExtra("PostID", myModel.postID)
-                intent1.putExtra("Rebtn", myModel.rebtn)
-                intent1.putExtra("Reheart", myModel.reheart)
-                intent1.putExtra("Rereed", myModel.rereed)
+                intent1.putExtra("Rebtn", myModel.title)
+                intent1.putExtra("Reheart", myModel.fireCount)
+                intent1.putExtra("Rereed", myModel.viewCount)
                 intent1.putExtra("Content",myModel.content)
                 binding.root.context.startActivity(intent1)
             }
-            binding.reheart.text = myModel.reheart.toString()
-            binding.rereed.text = myModel.rereed.toString()
+            binding.reheart.text = myModel.fireCount.toString()
+            binding.rereed.text = myModel.viewCount.toString()
         }
     }
 

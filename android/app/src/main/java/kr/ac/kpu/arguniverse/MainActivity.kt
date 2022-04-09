@@ -3,14 +3,12 @@ package kr.ac.kpu.arguniverse
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import kr.ac.kpu.arguniverse.databinding.ActivityMainBinding
-import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
     lateinit var btn : Button
@@ -46,19 +44,19 @@ class MainActivity : AppCompatActivity() {
 
 
         btn.setOnClickListener{
-            popular.rereed.plus(1)
+            popular.viewCount.plus(1)
             var intent = Intent(applicationContext,post::class.java)
             intent.putExtra("PostID", popular.postID )
-            intent.putExtra("Reheart", popular.reheart )
-            intent.putExtra("Rebtn", popular.rebtn )
-            intent.putExtra("Rereed", popular.rereed )
+            intent.putExtra("Reheart", popular.fireCount )
+            intent.putExtra("Rebtn", popular.title )
+            intent.putExtra("Rereed", popular.viewCount )
             intent.putExtra("Content",popular.content)
             startActivity(intent)
         }
 
-        btn.setText(popular.rebtn)
-        heart.setText(popular.reheart.toString())
-        reed.setText(popular.rereed.toString())
+        btn.setText(popular.title)
+        heart.setText(popular.fireCount.toString())
+        reed.setText(popular.viewCount.toString())
 
         initializelist()
         initRecyclerView()
