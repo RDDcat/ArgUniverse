@@ -1,0 +1,17 @@
+allData   모든 데이터 arraylist
+MyModel    val title: String,
+    	val fireCount: Int,
+    	val viewCount: Int,
+   	 val postID: Int,
+   	 val content: String
+	이 형식의 모델
+mainTitle 	인기글 제목
+mainviewCount 	인기글 조회수
+mainfireCount 	인기글 공감수
+finishpost 	post닫기
+posttitle		post안제목
+postcontent	post안내용
+postfireCount	post안공감숫자
+postgoodCount	post안 댓글 좋아요누르는버튼
+postbadCount	post안 댓글 싫어요누르는버튼
+postcomment	post안 댓글달기	

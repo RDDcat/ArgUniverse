@@ -33,7 +33,7 @@
             android:textColor="#FF0000"/>
 
         <TextView
-            android:id="@+id/heart"
+            android:id="@+id/MainfireCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
@@ -42,16 +42,17 @@
             android:layout_marginRight="80dp"
             android:layout_marginTop="60dp"
             android:layout_gravity="right|bottom"/>
+
         <TextView
-            android:id="@+id/reed"
+            android:id="@+id/MainviewCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
-            android:textColor="@color/black"
+            android:layout_gravity="right|bottom"
             android:layout_marginRight="10dp"
-            android:layout_gravity="right|bottom"/>
+            android:text=""
+            android:textColor="@color/black" />
         <TextView
-            android:id="@+id/entry"
+            android:id="@+id/Read"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="조회수:"
@@ -59,7 +60,7 @@
             android:layout_marginRight="35dp"
             android:layout_gravity="right|bottom"/>
         <Button
-            android:id="@+id/btn"
+            android:id="@+id/MainTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
