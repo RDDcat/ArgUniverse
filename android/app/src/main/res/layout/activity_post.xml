@@ -13,18 +13,19 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="80dp">
+
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/postTitle"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="10dp"
-            android:layout_height="wrap_content"
             android:text="제목"
             android:textColor="@color/black"
 
-             />
+            />
         <Button
-            android:id="@+id/finish1"
+            android:id="@+id/finishPost"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:text="&lt;"
@@ -35,14 +36,14 @@
 
     </FrameLayout>
     <TextView
-        android:id="@+id/text"
+        android:id="@+id/postContent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="30dp"
         android:textColor="@color/black"
         android:text=""/>
     <Button
-        android:id="@+id/heartcount"
+        android:id="@+id/postFireCount"
         android:layout_width="50dp"
         android:layout_height="match_parent"
         android:layout_gravity="right"
@@ -61,7 +62,7 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:id="@+id/goodcount"
+            android:id="@+id/postGoodCount"
             android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_gravity="right"
@@ -70,14 +71,14 @@
             android:drawableLeft="@drawable/good1" />
 
         <Button
-            android:id="@+id/badcount"
+            android:id="@+id/postBadCount"
             android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_gravity="right"
             android:background="@color/white"
             android:drawableLeft="@drawable/bad1"/>
         <EditText
-            android:id="@+id/edit"
+            android:id="@+id/postComment"
             android:layout_width="260dp"
             android:layout_height="match_parent"
             android:layout_margin="10dp"

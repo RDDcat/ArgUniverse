@@ -7,51 +7,119 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import kr.ac.kpu.arguniverse.MyModel.Companion.array1
+import kr.ac.kpu.arguniverse.MyModel.Companion.allData
 import kr.ac.kpu.arguniverse.databinding.ActivityMainBinding
-import java.io.FileInputStream
+import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
-    lateinit var btn : Button
-    lateinit var heart : TextView
-    lateinit var reed : TextView
+    lateinit var mainTitle : Button
+    lateinit var mainfireCount : TextView
+    lateinit var mainviewCount : TextView
     private lateinit var binding: ActivityMainBinding
     private lateinit var adapter: RecyclerViewAdapter //adapter객체 먼저 선언해주기!
-    private lateinit var popular : MyModel
     var mDatas = mutableListOf<MyModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        btn = findViewById(R.id.btn)
-        heart = findViewById(R.id.heart)
-        reed = findViewById(R.id.reed)
+        mainTitle = findViewById(R.id.MainTitle)
+        mainfireCount = findViewById(R.id.MainfireCount)
+        mainviewCount = findViewById(R.id.MainviewCount)
         test()
-        popular = MyModel(array1[0].title,array1[0].fireCount, array1[0].viewCount, array1[0].postID,
-            array1[0].content)
 
-
-        btn.setOnClickListener{
-            popular.viewCount.plus(1)
+        mainTitle.setOnClickListener{
+           allData[0].add(1)
+            mainviewCount.text = allData[0].viewCount.toString()
+            Toast.makeText(applicationContext, "${allData[0].viewCount}", Toast.LENGTH_SHORT).show()
+            //allData[0].viewCount = allData[0].viewCount + 1
             var intent = Intent(applicationContext,post::class.java)
-            intent.putExtra("PostID", popular.postID )
-            intent.putExtra("Reheart", popular.fireCount )
-            intent.putExtra("Rebtn", popular.title )
-            intent.putExtra("Rereed", popular.viewCount )
-            intent.putExtra("Content",popular.content)
+            intent.putExtra("title", allData[0].title)
+            intent.putExtra("fireCount", allData[0].fireCount)
+            intent.putExtra("viewCount", allData[0].viewCount)
+            intent.putExtra("postID", allData[0].postID)
+            intent.putExtra("content", allData[0].content)
             startActivity(intent)
         }
 
-        btn.setText(popular.title)
-        heart.setText(popular.fireCount.toString())
-        reed.setText(popular.viewCount.toString())
-
+        mainTitle.setText(allData[0].title)
+        mainfireCount.setText(allData[0].fireCount.toString())
+//        mainviewCount.setText(allData[0].viewCount.toString())
+        mainviewCount.text = allData[0].viewCount.toString()
         initializelist()
         initRecyclerView()
 
 
+    }
+
+    fun test(): ArrayList<MyModel> {
+
+
+        val jsonString = """ 
+            {
+            "postList": [
+            {
+                title: "인기글입니다",
+                fireCount: 1,
+                viewCount: 1,
+                postID : 1,
+                content : "인기글내용"
+            },
+            {
+                "title": "리사이클1번",
+                "fireCount": 2,
+                "viewCount": 2,
+                "postID" : 2,
+                "content" : "리사이클1번내용"
+            },
+            {
+                "title": "리사이클2번",
+                "fireCount": 3,
+                "viewCount": 3,
+                "postID" : 3,
+                "content" : "리사이클2번내용"
+            },
+            {
+                title: "리사이클3번",
+                fireCount: 4,
+                viewCount: 4,
+                postID : 4,
+                content : "리사이클3번내용"
+            },
+            {
+                title: "리사이클4번",
+                fireCount: 5,
+                viewCount: 5,
+                postID : 5,
+                content : "리사이클4번내용"
+            }
+            ]
+        }
+        """.trimIndent()
+
+            // openFileOutput("/data/data/kr.ac.kpu.arguniverse/files/MyModel.txt")
+
+        val jsonObject = JSONObject(jsonString)
+        val jsonArray = jsonObject.getJSONArray("postList")
+
+
+        for (i in 0..jsonArray.length() - 1) {
+
+            val iObject = jsonArray.getJSONObject(i)
+            allData.add(
+                MyModel(
+                    iObject.getString("title"),
+                    iObject.getInt("fireCount"),
+                    iObject.getInt("viewCount"),
+                    iObject.getInt("postID"),
+                    iObject.getString("content")
+                )
+            )
+
+        }
+        return allData
     }
 
     fun initRecyclerView() {
@@ -63,10 +131,9 @@ class MainActivity : AppCompatActivity() {
 
     fun initializelist() { //임의로 데이터 넣어서 만들어봄
         with(mDatas) {
-            add(MyModel("깻잎논쟁", 123, 112,1,"(설사 지인이라 할지라도) ‘외간 이성’이 붙어있는 깻잎지를 잘 못 떼어먹을 때, 자신의 애인(배우자)이 젓가락으로 깻잎지를 눌러줘도 되는지 ‘허용’과 ‘불허’의 갈림길에 선 건데요."))
-            add(MyModel("모프는", 23, 21,2,"모프를 전공으로 하면 돈을 잘 벌까?"))
-            add(MyModel("이상호", 3, 3,3,"이상호 교수님은 진짜 탈론을 잘할까?"))
-            add(MyModel("교수님", 4, 412,4,"교수님들은 예쁜 여학생한테 더 잘챙겨 주실까?"))
+            for(i in 1..allData.size-1 step(1))
+                add(MyModel(allData[i].title,allData[i].fireCount, allData[i].viewCount, allData[i].postID,
+                    allData[i].content))
 
         }
     }

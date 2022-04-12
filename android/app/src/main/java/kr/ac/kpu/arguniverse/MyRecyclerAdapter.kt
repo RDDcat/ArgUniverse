@@ -15,18 +15,21 @@ class RecyclerViewAdapter: RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder
 
         fun bind(myModel:MyModel){
             binding.rebtn.text = myModel.title
-            binding.rebtn.setOnClickListener {
-                myModel.viewCount.plus(1)
-                var intent1 = Intent(binding.root.context,post::class.java)
-                intent1.putExtra("PostID", myModel.postID)
-                intent1.putExtra("Rebtn", myModel.title)
-                intent1.putExtra("Reheart", myModel.fireCount)
-                intent1.putExtra("Rereed", myModel.viewCount)
-                intent1.putExtra("Content",myModel.content)
-                binding.root.context.startActivity(intent1)
-            }
             binding.reheart.text = myModel.fireCount.toString()
             binding.rereed.text = myModel.viewCount.toString()
+
+            binding.rebtn.setOnClickListener {
+                myModel.viewCount = myModel.viewCount + 1
+                binding.rereed.text = myModel.viewCount.toString()
+                myModel.viewCount.plus(1)
+                var intent1 = Intent(binding.root.context,post::class.java)
+                intent1.putExtra("title", myModel.title)
+                intent1.putExtra("fireCount", myModel.fireCount)
+                intent1.putExtra("viewCount", myModel.viewCount)
+                intent1.putExtra("postID", myModel.postID)
+                intent1.putExtra("content",myModel.content)
+                binding.root.context.startActivity(intent1)
+            }
         }
     }
 

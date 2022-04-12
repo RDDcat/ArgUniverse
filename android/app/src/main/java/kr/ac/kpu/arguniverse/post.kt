@@ -10,13 +10,13 @@ import android.widget.TextView
 import android.widget.Toast
 
 class post : AppCompatActivity() {
-    lateinit var finish1: Button
-    lateinit var name: TextView
-    lateinit var text: TextView
-    lateinit var heartcount: Button
-    lateinit var goodcount: Button
-    lateinit var badcount: Button
-    lateinit var edit: EditText
+    lateinit var finishpost: Button
+    lateinit var posttitle: TextView
+    lateinit var postcontent: TextView
+    lateinit var postfireCount: Button
+    lateinit var postgoodCount: Button
+    lateinit var postbadCount: Button
+    lateinit var postcomment: EditText
     var goodnum: Int? = 0
     var badnum: Int? = 0
     var Edit: String = ""
@@ -24,35 +24,37 @@ class post : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_post)
 
-        name = findViewById(R.id.name)
-        text = findViewById(R.id.text)
-        heartcount = findViewById(R.id.heartcount)
-        goodcount = findViewById(R.id.goodcount)
-        badcount = findViewById(R.id.badcount)
-        edit = findViewById(R.id.edit)
+        posttitle = findViewById(R.id.postTitle)
+        postcontent = findViewById(R.id.postContent)
+        postfireCount = findViewById(R.id.postFireCount)
+        postgoodCount = findViewById(R.id.postGoodCount)
+        postbadCount = findViewById(R.id.postBadCount)
+        postcomment = findViewById(R.id.postComment)
 
         var intent = intent
-        var Id = intent.getIntExtra("PostID", -1)
-        var Reed = intent.getIntExtra("Rereed", -1)
-        var Heart = intent.getIntExtra("Reheart", -1)
-        var Btn = intent.getStringExtra("Rebtn")
-        var MContent = intent.getStringExtra("Content")
+        var Id = intent.getIntExtra("postID", -1)
+        var Reed = intent.getIntExtra("fireCount", -1)
+        var Heart = intent.getIntExtra("viewCount", -1)
+        var Btn = intent.getStringExtra("title")
+        var MContent = intent.getStringExtra("content")
         Log.d("test", "id : " + Id)
         Log.d("test", "제목 : " + Btn)
         Log.d("test", "heart : " + Heart)
         Log.d("test", "reed : " + Reed)
-        finish1 = findViewById<Button>(R.id.finish1)
-        finish1.setOnClickListener {
+        Log.d("test", "reed : " + MContent)
+
+        finishpost = findViewById<Button>(R.id.finishPost)
+        finishpost.setOnClickListener {
             finish()
         }
-        name.text = Btn
-        text.text = MContent
-        goodcount.setOnClickListener {
-            if (edit.getText().toString().equals("")) {
+        posttitle.text = Btn
+        postcontent.text = MContent
+        postgoodCount.setOnClickListener {
+            if (postcomment.getText().toString().equals("")) {
                 Toast.makeText(applicationContext, "자신의 의견을 먼저 써주세요", Toast.LENGTH_SHORT).show()
             } else {
                 goodnum = goodnum?.plus(1)
-                Edit = edit.text.toString()
+                Edit = postcomment.text.toString()
                 var intent = Intent(applicationContext, comment::class.java)
                 intent.putExtra("cBtn", Btn)
                 intent.putExtra("cgoodnum", goodnum)
@@ -62,14 +64,14 @@ class post : AppCompatActivity() {
                 startActivity(intent)
             }
         }
-        badcount.setOnClickListener {
+        postbadCount.setOnClickListener {
 
-            if (edit.getText().toString().equals("")) {
+            if (postcomment.getText().toString().equals("")) {
                 Toast.makeText(applicationContext, "자신의 의견을 먼저 써주세요", Toast.LENGTH_SHORT).show()
             } else
                  {
                     badnum = badnum?.plus(1)
-                    Edit = edit.toString()
+                    Edit = postcomment.text.toString()
                     var intent = Intent(applicationContext, comment::class.java)
                     intent.putExtra("cBtn", Btn)
                     intent.putExtra("cgoodnum", goodnum)
@@ -81,7 +83,8 @@ class post : AppCompatActivity() {
 
         }
 
-        heartcount.setOnClickListener {
+        postfireCount.setOnClickListener {
+            postfireCount.isClickable = false
             Heart =Heart?.plus(1)
         }
     }
