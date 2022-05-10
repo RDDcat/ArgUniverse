@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <Button
+            android:id="@+id/reBadCommentGoodReCount"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginRight="49dp"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/good1"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/reBadCommentBadReCount"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/bad1"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/reBadCommentComment"
+            android:layout_width="260dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:text=""
+            android:textColor="@color/black"
+            android:background="@color/white"
+
+
+            />
+
+    </FrameLayout>
+</LinearLayout>

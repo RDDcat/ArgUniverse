@@ -9,19 +9,19 @@ import org.w3c.dom.Text
 
 class comment : AppCompatActivity() {
     lateinit var finish2 : Button
-    lateinit var Cgoodcount : TextView
-    lateinit var Cbadcount :TextView
+    lateinit var commentGoodcount : TextView
+    lateinit var coomentBadcount :TextView
     lateinit var Cedit : TextView
-    lateinit var cname : TextView
-    lateinit var CheartCount : TextView
+    lateinit var commentTitle : TextView
+    lateinit var commentHeartcount : TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_comment)
-        Cgoodcount = findViewById(R.id.Cgoodcount)
-        Cbadcount = findViewById(R.id.Cbadcount)
-        CheartCount = findViewById(R.id.Cheartcount)
+        commentGoodcount = findViewById(R.id.commentGoodcount)
+        coomentBadcount = findViewById(R.id.commentBadcount)
+        commentHeartcount = findViewById(R.id.commentHeartcount)
         Cedit = findViewById(R.id.Cedit)
-        cname =findViewById(R.id.cname)
+        commentTitle =findViewById(R.id.commentTitle)
         finish2 = findViewById<Button>(R.id.finish2)
         finish2.setOnClickListener{
             finish()

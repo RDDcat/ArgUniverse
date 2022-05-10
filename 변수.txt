@@ -15,3 +15,7 @@ postfireCount	post안공감숫자
 postgoodCount	post안 댓글 좋아요누르는버튼
 postbadCount	post안 댓글 싫어요누르는버튼
 postcomment	post안 댓글달기	
+iFireCount	intent받은좋아요수
+iViewCount	intent받은조회수
+iPostTitle		intent받은 제목
+iContent		intent받은 내용
