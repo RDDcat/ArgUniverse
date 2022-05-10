@@ -33,7 +33,6 @@ class MainActivity : AppCompatActivity() {
         mainTitle.setOnClickListener{
            allData[0].add(1)
             mainviewCount.text = allData[0].viewCount.toString()
-            Toast.makeText(applicationContext, "${allData[0].viewCount}", Toast.LENGTH_SHORT).show()
             //allData[0].viewCount = allData[0].viewCount + 1
             var intent = Intent(applicationContext,post::class.java)
             intent.putExtra("title", allData[0].title)
@@ -138,25 +137,5 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        // 1. xml을 이용한 메뉴 만들기
-        menuInflater.inflate(R.menu.menu, menu)
-        return true
 
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // 1. xml을 이용한 메뉴 만들기
-        when (item?.itemId) {
-            //R.id.item1
-            //->
-            //R.id.item2
-            //->
-            //R.id.item3
-            //->
-            //R.id.item4
-            //->
-        }
-        return super.onOptionsItemSelected(item)
-    }
 }

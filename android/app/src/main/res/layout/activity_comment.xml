@@ -7,94 +7,174 @@
     android:orientation="vertical"
     tools:context=".comment">
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="80dp">
-
-            <TextView
-            android:id="@+id/Cheartcount"
-            android:text="0"
-            android:gravity="center"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="right"
-            android:layout_marginRight="99dp"
-            android:background="@color/white"
-            android:drawableLeft="@drawable/fire1" />
-            <TextView
-                android:id="@+id/Cgoodcount"
-                android:text="0"
-                android:gravity="center"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="right"
-                android:layout_marginRight="49dp"
-                android:background="@color/white"
-                android:drawableLeft="@drawable/good1" />
-
-            <TextView
-                android:id="@+id/Cbadcount"
-                android:text="0"
-                android:layout_width="50dp"
-                android:gravity="center"
-                android:layout_height="match_parent"
-                android:layout_gravity="right"
-                android:background="@color/white"
-                android:drawableLeft="@drawable/bad1"/>
-            <TextView
-                android:id="@+id/cname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="10dp"
-                android:text="케이크 논쟁"
-                android:textColor="@color/black"
-
-                />
-
-            <Button
-                android:id="@+id/finish2"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:text="&lt;"
-                android:textColor="@color/black"
-                android:textSize="20dp" />
-
-        </FrameLayout>
-
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_margin="10dp"
-        android:layout_height="wrap_content">
+        android:layout_height="80dp">
 
-        <Button
-            android:id="@+id/editgoodcount"
-            android:text="0"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="right"
-            android:layout_marginRight="49dp"
-            android:background="@color/white"
-            android:drawableLeft="@drawable/good1" />
-
-        <Button
-            android:id="@+id/editbadcount"
-            android:text="0"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="right"
-            android:background="@color/white"
-            android:drawableLeft="@drawable/bad1"/>
         <TextView
-            android:id="@+id/Cedit"
-            android:layout_width="260dp"
+            android:id="@+id/commentHeartCount"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:layout_margin="10dp"
+            android:layout_gravity="right"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/fire1"
+            android:gravity="center"
+            android:text="0" />
 
+
+        <TextView
+            android:id="@+id/commentTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
+            android:text="케이크 논쟁"
             android:textColor="@color/black"
 
             />
 
+        <Button
+            android:id="@+id/finish2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="&lt;"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
     </FrameLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/commentGoodCount"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/good1"
+            android:gravity="center"
+            android:text="0" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <Button
+                    android:id="@+id/goodCommentGoodReCount"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="49dp"
+                    android:background="@color/white"
+                    android:drawableLeft="@drawable/good1"
+                    android:text="0" />
+
+                <Button
+                    android:id="@+id/goodCommentBadReCount"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:background="@color/white"
+                    android:drawableLeft="@drawable/bad1"
+                    android:text="0" />
+
+                <Button
+                    android:id="@+id/GoodCommentComment"
+                    android:layout_width="260dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:background="@color/white"
+
+                    />
+            </FrameLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/recycler_good" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/commentBadCount"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/bad1"
+            android:gravity="center"
+            android:text="0" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <Button
+                        android:id="@+id/badCommentGoodReCount"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="49dp"
+                        android:background="@color/white"
+                        android:drawableLeft="@drawable/good1"
+                        android:text="0" />
+
+                    <Button
+                        android:id="@+id/badCommentBadReCount"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right"
+                        android:background="@color/white"
+                        android:drawableLeft="@drawable/bad1"
+                        android:text="0" />
+
+                    <Button
+                        android:id="@+id/badCommentComment"
+                        android:layout_width="260dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:background="@color/white"
+
+                        />
+
+                </FrameLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/recycler_bad" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
 </LinearLayout>
