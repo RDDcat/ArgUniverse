@@ -1,4 +1,4 @@
-package com.kyp.arguniverse;
+package com.kyp.arguniverse.domain;
 
 
 import lombok.AllArgsConstructor;
