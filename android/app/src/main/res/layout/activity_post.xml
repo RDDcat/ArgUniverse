@@ -25,7 +25,7 @@
 
             />
         <Button
-            android:id="@+id/finishPost"
+            android:id="@+id/postFinish"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:text="&lt;"
@@ -59,7 +59,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_margin="10dp"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
         <Button
             android:id="@+id/postGoodCount"
             android:layout_width="50dp"
@@ -76,9 +76,10 @@
             android:layout_gravity="right"
             android:background="@color/white"
             android:drawableLeft="@drawable/bad1"/>
+
         <EditText
             android:id="@+id/postComment"
-            android:layout_width="260dp"
+            android:layout_width="281dp"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:hint="소신발언"

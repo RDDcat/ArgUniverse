@@ -9,7 +9,7 @@
         android:layout_margin="10dp">
 
         <Button
-            android:id="@+id/reBadCommentGoodReCount"
+            android:id="@+id/reReplyGoodCount"
             android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_gravity="right"
@@ -19,7 +19,7 @@
             android:text="0" />
 
         <Button
-            android:id="@+id/reBadCommentBadReCount"
+            android:id="@+id/reReplyBadCount"
             android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_gravity="right"
@@ -27,8 +27,8 @@
             android:drawableLeft="@drawable/bad1"
             android:text="0" />
 
-        <Button
-            android:id="@+id/reBadCommentComment"
+        <TextView
+            android:id="@+id/reReplyComment"
             android:layout_width="260dp"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
@@ -37,8 +37,6 @@
             android:textColor="@color/black"
             android:background="@color/white"
 
-
             />
-
     </FrameLayout>
 </LinearLayout>
