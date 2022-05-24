@@ -34,7 +34,7 @@
             />
 
         <Button
-            android:id="@+id/finish2"
+            android:id="@+id/commentFinish"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:text="&lt;"
@@ -94,6 +94,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
                     android:text=""
+                    android:gravity="left|center"
                     android:textColor="@color/black"
                     android:background="@color/white"
 
@@ -160,6 +161,7 @@
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
                         android:text=""
+                        android:gravity="left|center"
                         android:textColor="@color/black"
                         android:background="@color/white"
 

@@ -10,7 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 
 class post : AppCompatActivity() {
-    lateinit var finishpost: Button
+    lateinit var postFinish: Button
     lateinit var posttitle: TextView
     lateinit var postcontent: TextView
     lateinit var postfireCount: Button
@@ -20,6 +20,7 @@ class post : AppCompatActivity() {
     var goodnum: Int? = 0
     var badnum: Int? = 0
     var iComment: String = ""
+    var select : String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_post)
@@ -29,6 +30,7 @@ class post : AppCompatActivity() {
         postgoodCount = findViewById(R.id.postGoodCount)
         postbadCount = findViewById(R.id.postBadCount)
         postcomment = findViewById(R.id.postComment)
+        postFinish = findViewById<Button>(R.id.postFinish)
 
         var intent = intent
         var Id = intent.getIntExtra("postID", -1)
@@ -42,8 +44,7 @@ class post : AppCompatActivity() {
         Log.d("test", "reed : " + iFireCount)
         Log.d("test", "reed : " + iContent)
 
-        finishpost = findViewById<Button>(R.id.finishPost)
-        finishpost.setOnClickListener {
+        postFinish.setOnClickListener {
             finish()
         }
         posttitle.text = iTitle
@@ -52,14 +53,17 @@ class post : AppCompatActivity() {
             if (postcomment.getText().toString().equals("")) {
                 Toast.makeText(applicationContext, "자신의 의견을 먼저 써주세요", Toast.LENGTH_SHORT).show()
             } else {
+                select = "good"
                 goodnum = goodnum?.plus(1)
                 iComment = postcomment.text.toString()
                 var intent = Intent(applicationContext, comment::class.java)
-                intent.putExtra("iTitle", iTitle)
+                intent.putExtra("cTitle", iTitle)
                 intent.putExtra("cgoodnum", goodnum)
-                intent.putExtra("cEdit", iComment)
+                intent.putExtra("cComment", iComment)
                 intent.putExtra("cbadnum", badnum)
-                intent.putExtra("cHeart", iViewCount)
+                intent.putExtra("iFireCount",iFireCount)
+                intent.putExtra("cselect",select)
+                intent.putExtra("cFireCount",iFireCount)
                 startActivity(intent)
             }
         }
@@ -68,14 +72,16 @@ class post : AppCompatActivity() {
             if (postcomment.getText().toString().equals("")) {
                 Toast.makeText(applicationContext, "자신의 의견을 먼저 써주세요", Toast.LENGTH_SHORT).show()
             } else {
+                select = "bad"
                 badnum = badnum?.plus(1)
                 iComment = postcomment.text.toString()
                 var intent = Intent(applicationContext, comment::class.java)
-                intent.putExtra("cBtn", iTitle)
+                intent.putExtra("cTitle", iTitle)
                 intent.putExtra("cgoodnum", goodnum)
-                intent.putExtra("cEdit", iComment)
+                intent.putExtra("cComment", iComment)
+                intent.putExtra("iFireCount",iFireCount)
                 intent.putExtra("cbadnum", badnum)
-                intent.putExtra("cHeart", iViewCount)
+                intent.putExtra("cselect",select)
                 startActivity(intent)
             }
 
@@ -83,7 +89,7 @@ class post : AppCompatActivity() {
 
 
         postfireCount.setOnClickListener {
-            iViewCount = iViewCount?.plus(1)!!
+            iFireCount = iFireCount?.plus(1)!!
             postfireCount.isClickable = false
 
 

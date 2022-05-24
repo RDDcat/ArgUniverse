@@ -19,3 +19,16 @@ iFireCount	intent받은좋아요수
 iViewCount	intent받은조회수
 iPostTitle		intent받은 제목
 iContent		intent받은 내용
+iComment	댓글내용
+select		good클릭했는지 bad클릭했는지
+commentHeartCount	댓글창공감수
+commentTitle		댓글창 제목
+commentFinish		댓글창 닫기
+commentGoodCount	댓글창 좋아요
+goodCommentGoodReCount 댓글창 좋아요 댓글 좋아요
+goodCommentBadReCount	 댓글창 좋아요 댓글 싫어요
+GoodCommentComment	 댓글창 좋아요 댓글
+commentBadCount		댓글창 싫어요
+badCommentGoodReCount	 댓글창 싫어요 댓글 좋아요
+badCommentBadReCount	 댓글창 싫어요 댓글 싫어요
+badCommentComment	 댓글창 싫어요 댓글
