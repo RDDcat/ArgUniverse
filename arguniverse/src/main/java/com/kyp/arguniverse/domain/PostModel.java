@@ -14,4 +14,6 @@ public class PostModel {
     private int viewCount;
     private int postID;
     private String content;
+
+
 }
