@@ -1,0 +1,7 @@
+MainActivity : title , fireCount, viewCount, postID, content
+
+post : fireCount, comment , goodpost , badpost
+
+comment :  fireCount , goodpost, badpost , comment ,goodcomment, badcommnet
+
+relpy : comment , goodcomment , badcomment , replycomment, goodreply, badreply

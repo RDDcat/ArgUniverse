@@ -14,13 +14,13 @@ class RecyclerViewAdapter: RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder
     inner class MyViewHolder(private val binding: RecyclerViewItemBinding): RecyclerView.ViewHolder(binding.root) {
 
         fun bind(myModel:MyModel){
-            binding.rebtn.text = myModel.title
-            binding.reheart.text = myModel.fireCount.toString()
-            binding.rereed.text = myModel.viewCount.toString()
+            binding.recyclerTitle.text = myModel.title
+            binding.recyclerHeart.text = myModel.fireCount.toString()
+            binding.recyclerReed.text = myModel.viewCount.toString()
 
-            binding.rebtn.setOnClickListener {
+            binding.recyclerTitle.setOnClickListener {
                 myModel.viewCount = myModel.viewCount + 1
-                binding.rereed.text = myModel.viewCount.toString()
+                binding.recyclerReed.text = myModel.viewCount.toString()
                 myModel.viewCount.plus(1)
                 var intent1 = Intent(binding.root.context,post::class.java)
                 intent1.putExtra("title", myModel.title)

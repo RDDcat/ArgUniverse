@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
         <Button
-            android:id="@+id/write"
+            android:id="@+id/Write"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="글쓰기"
@@ -26,14 +26,13 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/hot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="*인기글*"
             android:textColor="#FF0000"/>
 
         <TextView
-            android:id="@+id/MainfireCount"
+            android:id="@+id/hotFireCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
@@ -44,7 +43,7 @@
             android:layout_gravity="right|bottom"/>
 
         <TextView
-            android:id="@+id/MainviewCount"
+            android:id="@+id/hotViewCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right|bottom"
@@ -52,7 +51,6 @@
             android:text=""
             android:textColor="@color/black" />
         <TextView
-            android:id="@+id/Read"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="조회수:"
@@ -60,7 +58,7 @@
             android:layout_marginRight="35dp"
             android:layout_gravity="right|bottom"/>
         <Button
-            android:id="@+id/MainTitle"
+            android:id="@+id/hotMainTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"

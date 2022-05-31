@@ -12,7 +12,7 @@ class MyModel(
 
 
     companion object {
-        var allData = ArrayList<MyModel>()
+        var myModelData = ArrayList<MyModel>()
     }
 
     fun add(x : Int) {
