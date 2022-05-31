@@ -1,15 +1,24 @@
 package com.kyp.arguniverse.service;
 
 import com.kyp.arguniverse.domain.PostModel;
+import com.kyp.arguniverse.repository.MemberRepository;
+import com.kyp.arguniverse.repository.MemoryMemberRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PostService {
-    public static List<PostModel> postModels = new ArrayList<>();
 
+    private final MemberRepository memberRepository;
+
+    public PostService(MemberRepository memberRepository){
+        this.memberRepository = memberRepository;
+    }
+
+    /*public static List<PostModel> postModels = new ArrayList<>();
     static {
         postModels.add(new PostModel("a", 1, 123, 1, "asdf!@#!@#@"));
         postModels.add(new PostModel("b", 1, 123, 2, "asdf!@#!@#@"));
@@ -31,19 +40,25 @@ public class PostService {
         postModels.add(new PostModel("r", 1, 123, 18, "asdf!@#!@#@1"));
         postModels.add(new PostModel("s", 1, 123, 19, "asdf!@#!@#@"));
         postModels.add(new PostModel("t", 1, 123, 20, "asdf!@#!@#@"));
+    }*/
+
+    public int newPost(PostModel model){
+        //validateDuplicateMember(model);
+        memberRepository.save(model);
+        return model.getPostID();
     }
 
-    public static List<PostModel> allPost(){
-        return postModels;
-    }
+    //중복 Title 여부
+    /*private void validateDuplicateMember(PostModel model) {
+        memberRepository.findByTitle(model.getTitle())
+                .ifPresent(m -> {
+                    throw new IllegalStateException("이미 존재하는 글입니다.");
+                });
+    }*/
 
-    public static PostModel selectPost(int pid){
-        for(PostModel postModel : postModels){
-            if(postModel.getPostID() == pid){
-                return postModel;
-            }
-        }
-        return null;
-    }
+    public List<PostModel> allPost(){ return memberRepository.findAll(); }
+
+    public Optional<PostModel> selectPost(int pid){ return memberRepository.findByPid(pid); }
+
 
 }
