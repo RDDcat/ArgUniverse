@@ -2,8 +2,4 @@ Manifest-Version: 1.0
 Created-By: IntelliJ IDEA
 Built-By: kimdo
 Build-Jdk: Oracle OpenJDK version 17.0.1
-Implementation-Title: arguniverse
-Implementation-Version: 0.0.1-SNAPSHOT
-Implementation-Vendor-Id: com.kyp
-Main-Class: ${start-class}
 
