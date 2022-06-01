@@ -1,5 +1,5 @@
 package com.kyp.arguniverse.controller;
-import com.kyp.arguniverse.domain.PostModel;
+import com.kyp.arguniverse.domain.Post;
 import com.kyp.arguniverse.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,12 +18,12 @@ public class Controller {
     }
 
     @GetMapping("post/{pid}")
-    public Optional<PostModel> test(@PathVariable("pid") int pid){
-        return service.selectPost(pid);
+    public Optional<Post> test(@PathVariable("pid") int pid){
+        return Optional.ofNullable(service.selectPost(pid));
     }
 
     @GetMapping(value = "post")
-    public List<PostModel> ttest() {
+    public List<Post> ttest() {
         return service.allPost();
     }
 
