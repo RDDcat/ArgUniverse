@@ -3,6 +3,7 @@ package com.kyp.arguniverse.service;
 import com.kyp.arguniverse.domain.Post;
 import com.kyp.arguniverse.domain.User;
 import com.kyp.arguniverse.repository.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ public class PostService {
     }
 
 
-    public static List<Post> postModels = new ArrayList<>();
+/*    public static List<Post> postModels = new ArrayList<>();
     static {
         User user = new User(1, "메롱");
         postModels.add(new Post(10007, user, 123, 1, "asdf!@#!@#@", "!@#!@#", 12, 1));
@@ -29,7 +30,7 @@ public class PostService {
         postModels.add(new Post(10011, user, 123, 1, "asdf!@#!@#@", "!@#!@#", 12, 1));
         postModels.add(new Post(10012, user, 123, 1, "asdf!@#!@#@", "!@#!@#", 12, 1));
 
-    }
+    }*/
 
     public List<Post> allPost(){ return memberRepository.findAll(); }
 
@@ -38,6 +39,8 @@ public class PostService {
     public Post savePost(Post post){
         return memberRepository.save(post);
     }
+
+    public List<Post> printMain(){ return memberRepository.print_Main(); }
 
 
 }

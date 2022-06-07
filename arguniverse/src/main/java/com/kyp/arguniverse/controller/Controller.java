@@ -18,13 +18,18 @@ public class Controller {
     }
 
     @GetMapping("post/{pid}")
-    public Optional<Post> test(@PathVariable("pid") int pid){
+    public Optional<Post> selectPostController(@PathVariable("pid") int pid){
         return Optional.ofNullable(service.selectPost(pid));
     }
 
     @GetMapping(value = "post")
-    public List<Post> ttest() {
+    public List<Post> allPostController() {
         return service.allPost();
+    }
+
+    @GetMapping(value = "main")
+    public List<Post> mainController(){
+        return service.printMain();
     }
 
 }
